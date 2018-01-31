@@ -12,10 +12,19 @@ def post_list(request):
     #  7-1. settings모듈의 TEMPLATES속성 내의 DIRS목록에서
     #       blog/post_list.html파일의 내용을 가져옴
     #  7-2. 가져온 내용을 적절히 처리(렌더링, render()함수)하여 리턴
-    # 8. 함수의 실행 결과(리턴값)을 브라우저로 다시 전달
+    # 8. 함수의 실행 결과(리턴값)을 브라우저로 다시  전달
 
     # HTTP프로토콜로 텍스트 데이터 응답을 반환
     # return HttpResponse('<html><body><h1>Post list</h1><p>Post목록을 보여줄 예정입니다</p></body>')
 
     # 'blog/post_list.html' 템플릿 파일을 이용해 HTTP프로토콜로 응답.
     return render(request, 'blog/post_list.html')
+
+def post_detail(request):
+    """
+    localhost:8000/detail로 온 요청을
+    'blog/post_detail.html'을 Render한 결과를 리턴
+    :param request:
+    :return:
+    """
+    return render(request, 'blog/post_detail.html')
